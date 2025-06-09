@@ -1,0 +1,42 @@
+<main>
+    <section class="main-section">
+      <div class="form-container">
+        <h1>Payment</h1>
+  
+        <div class="form-layout">
+          <!-- Coluna 1: Planos -->
+          <div class="plan-options">
+            <p>Choose a plan:</p>
+            <label>
+              <input type="radio" name="plan" [(ngModel)]="selectedPlano" value="x" />
+              Plan X
+            </label>
+            <label>
+              <input type="radio" name="plan" [(ngModel)]="selectedPlano" value="y" />
+              Plan Y
+            </label>
+            <p>Selected plan: {{ selectedPlano }}</p>
+          </div>
+  
+          <!-- Coluna 2: Informações do cartão -->
+          <form class="form">
+            <p>Card number:</p>
+            <input type="text" placeholder="4242 4242 4242 4242" disabled />
+  
+            <p>Validity:</p>
+            <input type="text" placeholder="MM/AA" disabled />
+  
+            <p>CVC:</p>
+            <input type="text" placeholder="123" disabled />
+  
+            <button class="start-btn" [disabled]="!selectedPlano">
+              Pay by card (simulated)
+            </button>
+  
+            <a>Have an account? <b routerLink="/">Login</b></a>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  

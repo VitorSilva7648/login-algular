@@ -12,7 +12,7 @@
           <p>Confirm Password</p>
           <input type="text" placeholder="Password" required />
   
-          <p>Escolha um plano:</p>
+         <!--   <p>Escolha um plano:</p>
           <label>
             <input type="radio" name="plano" [(ngModel)]="selectedPlano" value="x" />
             Plano X
@@ -22,11 +22,11 @@
             Plano Y
           </label>
   
-         <!-- <p>Plano selecionado: {{ selectedPlano }}</p> -->
+        <p>Plano selecionado: {{ selectedPlano }}</p> -->
   
           <a>Have an account? <b routerLink="/">Login</b></a>
           <div class="btn">
-            <button class="start-btn">Get Started</button>
+            <button routerLink="/payment" class="start-btn">Payment</button>
           </div>
         </form>
   
