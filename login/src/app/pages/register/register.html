@@ -1,19 +1,37 @@
 <main>
     <section class="main-section">
-        <div class="form-container">
-            <h1> Register</h1>
-            <form class="form">
-              <p>Email</p>
-              <input type="text" placeholder="Email" required/>
-              <p>Password</p>
-              <input type="text" placeholder="Password" required/>
-              <p>Confirm Password</p>
-              <input type="text" placeholder="Password" required/>
-              <a >Have an account?<b routerLink="/">Register</b></a>
-            </form>
-            <div class="btn">
+      <div class="form-container">
+        <h1>Register</h1>
+        <form class="form">
+          <p>Email</p>
+          <input type="text" placeholder="Email" required />
+  
+          <p>Password</p>
+          <input type="text" placeholder="Password" required />
+  
+          <p>Confirm Password</p>
+          <input type="text" placeholder="Password" required />
+  
+          <p>Escolha um plano:</p>
+          <label>
+            <input type="radio" name="plano" [(ngModel)]="selectedPlano" value="x" />
+            Plano X
+          </label>
+          <label>
+            <input type="radio" name="plano" [(ngModel)]="selectedPlano" value="y" />
+            Plano Y
+          </label>
+  
+         <!-- <p>Plano selecionado: {{ selectedPlano }}</p> -->
+  
+          <a>Have an account? <b routerLink="/">Login</b></a>
+          <div class="btn">
             <button class="start-btn">Get Started</button>
           </div>
-        </div>
-        </section>
-</main>
+        </form>
+  
+        
+      </div>
+    </section>
+  </main>
+  

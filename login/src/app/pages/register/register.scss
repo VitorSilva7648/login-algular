@@ -73,6 +73,13 @@
     background-color: #fff;
     height: auto;
   }
+  select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: "Poppins", sans-serif;
+  }
+
   .btn{
     display: flex;
     justify-content: center;
@@ -95,4 +102,16 @@
   .start-btn:hover {
     background-color: #0056b3;
   }
+
+  input[type="radio"] {
+  margin-right: 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
   
+    color: #000;
+  
+}
