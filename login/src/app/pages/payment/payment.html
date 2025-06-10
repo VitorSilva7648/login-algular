@@ -15,28 +15,62 @@
               <input type="radio" name="plan" [(ngModel)]="selectedPlano" value="y" />
               Plan Y
             </label>
-            <p>Selected plan: {{ selectedPlano }}</p>
+           <!-- <p>Selected plan: {{ selectedPlano }}</p> -->
           </div>
   
-          <!-- Coluna 2: Informações do cartão -->
-          <form class="form">
-            <p>Card number:</p>
-            <input type="text" placeholder="4242 4242 4242 4242" disabled />
-  
-            <p>Validity:</p>
-            <input type="text" placeholder="MM/AA" disabled />
-  
-            <p>CVC:</p>
-            <input type="text" placeholder="123" disabled />
-  
-            <button class="start-btn" [disabled]="!selectedPlano">
-              Pay by card (simulated)
-            </button>
-  
-            <a>Have an account? <b routerLink="/">Login</b></a>
-          </form>
+                <!-- Seção: Forma de pagamento -->
+        <div class="plan-options">
+            <p>Choose payment:</p>
+            <label>
+            <input
+                type="radio"
+                name="payment"
+                [(ngModel)]="selectedPayment"
+                value="card"
+            />
+            Card
+            </label>
+            <label>
+            <input
+                type="radio"
+                name="payment"
+                [(ngModel)]="selectedPayment"
+                value="pix"
+            />
+            Pix
+            </label>
+          <!--  <p>Forma selecionada: {{ selectedPayment }}</p> -->
+
         </div>
-      </div>
-    </section>
+        <!-- Se cartão for selecionado, mostra inputs -->
+        <form class="form" *ngIf="selectedPayment === 'card'">
+            <p>Card number:</p>
+            <input type="text" placeholder="4242 4242 4242 4242" />
+        
+            <p>Validity:</p>
+            <input type="text" placeholder="MM/AA" />
+        
+            <p>CVC:</p>
+            <input type="text" placeholder="123" />
+        
+            <button class="start-btn" [disabled]="!selectedPlano || selectedPayment !== 'card'">
+                Pay by card (simulated)
+            </button>
+            
+        
+           
+        </form>
+        
+        <!-- Se pix for selecionado, mostra QR Code -->
+        <div class="form" *ngIf="selectedPayment === 'pix'">
+            <p>Use the QR Code below to complete your payment:</p>
+            <img src="/assets/qr-code.png" alt="Pix QR Code" style="width: 200px;" />
+        </div>
+      
+            </div>
+            <a>Have an account? <b routerLink="/">Login</b></a>
+       
+        </div>
+        </section>
   </main>
   
